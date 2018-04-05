@@ -20,7 +20,7 @@ args:
 tasks:
   - git:
       repo: https://github.com/freckles-io/freckle-adapter-template.git
-      dest: ~/.local/freckles/templates/freckle-adapter-template
+      dest: ~/.local/share/freckles/templates/freckle-adapter-template
       update: true
   - command:
-      free_form: "cookiecutter --no-input --output-dir \"{{:: adapter_path ::}}\" ~/.local/freckles/templates/freckle-adapter-template adapter_name='{{:: adapter_name ::}}'"
+      free_form: "cookiecutter --no-input --output-dir \"{{:: adapter_path ::}}\" ~/.local/share/freckles/templates/freckle-adapter-template adapter_name='{{:: adapter_name ::}}'"
