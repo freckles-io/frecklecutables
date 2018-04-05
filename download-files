@@ -1,0 +1,46 @@
+#! /usr/bin/env frecklecute
+
+doc:
+  help: downloads files specified in a yaml file to a folder
+
+args:
+  target_path:
+     arg_name: target
+     required: false
+     is_argument: false
+     is_var: false
+  file_list:
+     arg_name: file_list
+     required: true
+     # nargs: 1
+     is_argument: true
+     is_var: false
+
+tasks: |
+  - include_vars:
+      #file: "{{:: LOCAL_ENV.PWD ::}}/{{:: file_list ::}}"
+      file: /home/markus/projects/repos/adapters_extra/wordpress/utils/util-files.yml
+      name: files_to_download
+
+  - set_fact:
+      markus: markus2
+
+  - debug:
+      msg: "{{ markus }}"
+  - debug:
+      var: files_to_download
+
+
+  {%:: for item in file_list ::%}
+  - meta:
+      name: get_url
+      #task-desc: "downloading '{{:: item.name ::}}' script"
+      task-type: ansible_task
+      with_items: files_to_download.files
+    vars:
+      url: "{{ item.url }}"
+      dest: "{{:: target_path | default(LOCAL_ENV.PWD, true) ::}}/{{ item.name }}"
+      force: true
+      headers: "Cache-Control:no-cache,Cache-Control:no-store,Cache-Control:must-revalidate,Cache-Control:max-age=0,Expires:0"
+      mode: "0775"
+  {%:: endfor ::%}
