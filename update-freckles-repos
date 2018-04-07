@@ -1,6 +1,11 @@
 #! /usr/bin/env frecklecute
 doc:
-  help: updates the trusted repos configured in ~/.freckles/.freckle
+  author: Markus Binsteiner
+  homepage: https://docs.freckles.io/en/latest/frecklecutables/update-freckles-repos.html
+  short_help: updates the trusted repos configured in ~/.freckles/.freckle
+  help: |
+    Updates all context repos that are configured under the 'trusted-repos' key in the ~/.freckles/.freckle configuration file.
+
 tasks:
   - freckles-io.freckles-config:
       freckles_config_update_repos: true

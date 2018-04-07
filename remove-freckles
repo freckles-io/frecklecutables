@@ -1,6 +1,11 @@
 #! /usr/bin/env frecklecute
 doc:
-  help: removes a freckles install from a machine
+  author: Markus Binsteiner
+  homepage: https://docs.freckles.io/en/latest/frecklecutables/remove-freckles.html
+  short_help: removes a freckles install from a machine
+  help: |
+     Removes a freckles install from a machine.
+
 tasks:
   - remove-freckles:
       install_method: auto

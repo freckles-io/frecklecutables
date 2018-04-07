@@ -1,6 +1,12 @@
 #! /usr/bin/env frecklecute
 doc:
-  help: create a freckle adapter stub from a template ( https://github.com/freckles-io/freckle-adapter-template.git )
+  author: Markus Binsteiner
+  homepage: https://docs.freckles.io/en/latest/frecklecutables/create-freckelize-adapter.html
+  short_help: creates a freckelize adapter stub from a template
+  help: |
+    Create a freckelize adapter stub from a template.
+
+    The template used can be found here: https://github.com/freckles-io/freckle-adapter-template.git
 
 args:
   adapter_path:

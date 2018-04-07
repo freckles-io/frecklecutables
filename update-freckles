@@ -1,6 +1,13 @@
 #! /usr/bin/env frecklecute
 doc:
-  help: updates freckles itself
+  author: Markus Binsteiner
+  homepage: https://docs.freckles.io/en/latest/frecklecutables/update-freckles.html
+  short_help: updates freckles itself
+  help: |
+    Updates freckles
+
+    This command will update freckles to the latest version on pypi (https://pypi.org/project/freckles/).
+
 tasks:
   - update-freckles:
       install_method: auto

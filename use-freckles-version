@@ -1,7 +1,12 @@
 #! /usr/bin/env frecklecute
 doc:
+  author: Markus Binsteiner
+  homepage: https://docs.freckles.io/en/latest/frecklecutables/use-freckles-version.html
   short_help: "Change to a specific version of freckles."
-  help: "Change to a specific version of freckles.\n\nYou can either specify a (valid) version number, 'git' for the current git (master) branch, or a path to a local folder with the source-code."
+  help: |
+    Change to a specific version of freckles.
+
+    You can either specify a (valid) version number, 'git' for the current git (master) branch, or a path to a local folder with the source-code."
 
 args:
   freckles_version:

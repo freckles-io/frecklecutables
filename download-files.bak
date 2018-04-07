@@ -1,6 +1,8 @@
 #! /usr/bin/env frecklecute
 
 doc:
+  author: Markus Binsteiner
+  homepage: https://docs.freckles.io/en/latest/frecklecutables/
   help: downloads files specified in a yaml file to a folder
 
 args:

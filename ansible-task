@@ -1,6 +1,8 @@
 #! /usr/bin/env frecklecute
 
 doc:
+  author: Markus Binsteiner
+  homepage: https://docs.freckles.io/en/latest/frecklecutables/ansible-task.html
   short_help: executes an ansible task or role
   help: |
     Executes a single ansible task or role.
@@ -19,7 +21,7 @@ args:
     required: false
     default: false
     doc:
-      help: whether to become root for this task or not
+      help: whether to become root for this task or not, defaults to 'no'
     click:
       option:
         is_flag: true
