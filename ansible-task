@@ -1,29 +1,42 @@
 #! /usr/bin/env frecklecute
+
 doc:
-  help: executes an ansible task or role
+  short_help: executes an ansible task or role
+  help: |
+    Executes a single ansible task or role.
+
 args:
   task_name:
-    arg_name: task-name
-    help: the name of the task or role
+    alias: task-name
     required: true
-    metavar: "TASK_OR_ROLE"
-    is_var: false
+    doc:
+      help: the name of the task or role
+    click:
+      option:
+        metavar: "TASK_OR_ROLE"
   become_root:
-    help: whether to become root for this task or not
-    arg_name: become
+    alias: become
     required: false
-    is_flag: true
     default: false
-    is_var: false
+    doc:
+      help: whether to become root for this task or not
+    click:
+      option:
+        is_flag: true
   vars_file:
-    help: a file or json string containing vars for the specified task/role
-    arg_name: vars
-    multiple: false
+    alias: vars
     required: false
-    is_var: true
-    use_value: true
-    type: freckles.utils.VarsTypeJson
+    doc:
+      help: a file or json string containing vars for the specified task/role
+    click:
+      option:
+        multiple: false
+        type: freckles.utils.VarsTypeJson
+
+    # use_value: true
 tasks:
   - meta:
-     name: "{{:: task_name ::}}"
-     become: "{{:: become_root ::}}"
+      name: "{{:: task_name ::}}"
+      become: "{{:: become_root ::}}"
+    vars:
+      {{:: vars_file | to_yaml ::}}

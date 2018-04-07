@@ -4,19 +4,23 @@ doc:
 
 args:
   adapter_path:
-    help: "the target path for the adapter (defaults to: ~/.freckles/adapters)"
-    arg_name: path
-    required: false
-    is_var: false
-    is_argument: false
-    metavar: "PATH"
+    alias: path
     default: "~/.freckles/adapters"
+    required: false
+    doc:
+      help: "the target path for the adapter (defaults to: ~/.freckles/adapters)"
+    click:
+      option:
+        metavar: "PATH"
   adapter_name:
-    arg_name: adapter-name
+    alias: adapter-name
     required: true
-    nargs: 1
-    is_var: false
-    is_argument: true
+    doc:
+      help: "the name of the new adapter"
+    click:
+      argument:
+        nargs: 1
+
 tasks:
   - git:
       repo: https://github.com/freckles-io/freckle-adapter-template.git
