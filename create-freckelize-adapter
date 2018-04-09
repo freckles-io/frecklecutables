@@ -28,9 +28,15 @@ args:
         nargs: 1
 
 tasks:
-  - git:
+  - meta:
+      task-desc: checking out template repo
+      name: git
+    vars:
       repo: https://github.com/freckles-io/freckle-adapter-template.git
       dest: ~/.local/share/freckles/templates/freckle-adapter-template
       update: true
-  - command:
+  - meta:
+      task-desc: "creating adapter '{{:: adapter_name ::}}' from template"
+      name: command
+    vars:
       free_form: "cookiecutter --no-input --output-dir \"{{:: adapter_path ::}}\" ~/.local/share/freckles/templates/freckle-adapter-template adapter_name='{{:: adapter_name ::}}'"
